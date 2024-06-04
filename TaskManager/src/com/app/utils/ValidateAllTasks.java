@@ -30,11 +30,12 @@ public class ValidateAllTasks {
 		Task t=new Task(taskId);
 		int index=taskList.indexOf(t);
 			if(index== -1) {
-				System.out.println("Task not updated !!");
-			t.setStatus(Type);
-				return ("Task Status is Updated successfully !!");
-				
+				throw new TaskManagerException("Id is not found ");
 			}
+				Status s=validateStatus(Type);
+			t.setStatus(s);
+				
+			return ("Task Status is Updated successfully !!");
 		}
 	}
 	

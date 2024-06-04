@@ -1,11 +1,9 @@
 package com.app.tester;
 
-import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-import com.app.core.Status;
 import com.app.core.Task;
 import com.app.utils.ValidateAllTasks;
 

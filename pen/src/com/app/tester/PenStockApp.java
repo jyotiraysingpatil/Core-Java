@@ -1,9 +1,11 @@
 package com.app.tester;
 
+import static com.app.utils.PenUtils.addNewPenStock;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
-import static com.app.utils.PenUtils.addNewPenStock;
+
 import com.app.pen.PenStock;
 import com.app.utils.PenUtils;
 
@@ -17,7 +19,8 @@ public class PenStockApp {
 		//PenStock pen=new PenStock(id);
 		int counter=0;
 		while(!exit) {
-		System.out.println("Options:  1.Add new Pen  2.Update Stock of Pen   3.Remove Pens never sold once in 9 months  ");
+		System.out.println("Options:  1.Add new Pen  2.Update Stock of Pen   3.Set discount of 20% for all the pens which are not at all sold in last 3 months   "
+				+ "4.Remove Pens never sold once in 9 months");
 		  System.out.println("enter choice: ");
           switch(sc.nextInt()) {
           case 1:
@@ -32,8 +35,14 @@ public class PenStockApp {
         	  PenUtils.updatePenStock(sc.nextInt(),penstock);
         	 break;
         	 
-          case 3:
+          case 3:System.out.println("Discount add list is : ");
         	  PenUtils.setDiscountForOldPens(penstock);
+        	  break;
+        	  
+          case 4:
+        	  System.out.println("Remove pens from list :");
+        	PenUtils.removePens(penstock);
+        	break;
           }
           
 	}

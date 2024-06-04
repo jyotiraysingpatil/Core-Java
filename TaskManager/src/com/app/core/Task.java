@@ -62,14 +62,16 @@ public Status getStatus() {
 }
 
 
-public void setStatus(String type) {
-	this.status = type;
+
+
+public void setStatus(Status status) {
+	this.status = status;
 }
 
 
 public Task( String taskName, String description, LocalDate taskDate, Status status, boolean active) {
 	super();
-	
+	taskId = idCounter++;
 	this.taskName = taskName;
 	this.description = description;
 	this.taskDate = taskDate;

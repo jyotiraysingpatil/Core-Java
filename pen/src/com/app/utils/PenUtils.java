@@ -56,7 +56,21 @@ public class PenUtils {
 		}
 	}
 	return penstock;
-	}       
+	}   
+	
+	public static String removePens(List<PenStock> penStock) throws PenException {
+		LocalDate currentDate=LocalDate.now();
+		LocalDate nineMonthAgo=currentDate.minusMonths(9);
+		Iterator<PenStock> itr=penStock.iterator();
+		while(itr.hasNext()) {
+			PenStock p=itr.next();
+			if(p.getStockListingDate().isBefore(nineMonthAgo)) {
+				itr.remove();
+			}
+		}
+		return "Pens removed successfully";
+		
+	}
 	        
 }        
 	
